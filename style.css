@@ -30,5 +30,6 @@ body {
     flex: 0 0 calc(100% / 16);
     aspect-ratio: 1 / 1;
     background-color: white;
-    border: 1px solid black;
+    border: 1px solid gray;
 }
+
