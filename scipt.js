@@ -6,9 +6,7 @@ function setSquare(number) {
         square.addEventListener('mouseenter', () => {
             square.style.background = "black";
         })
-        square.addEventListener('mouseleave', () => {
-            square.style.background = "white";
-        })
+        
         container.appendChild(square);
 
     }
