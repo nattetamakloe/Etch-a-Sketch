@@ -12,7 +12,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  background-color: rgb(235, 222, 40);
   font-family: sans-serif;
 
 }
@@ -29,6 +29,6 @@ body {
 .square {
     flex: 0 0 calc(100% / 16);
     aspect-ratio: 1 / 1;
-    background-color: green;
-    border: 1px solid #ddd
+    background-color: white;
+    border: 1px solid black;
 }
