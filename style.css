@@ -10,6 +10,8 @@
 
 body {
   display: flex;
+  flex-direction: column;
+  gap: 5px ;
   justify-content: center;
   align-items: center;
   background-color: rgb(235, 222, 40);
@@ -31,5 +33,9 @@ body {
     aspect-ratio: 1 / 1;
     background-color: white;
     border: 1px solid gray;
+}
+
+#newBtn {
+    padding: 10px 20px;
 }
 
