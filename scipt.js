@@ -8,5 +8,5 @@ function setSquare(number) {
     }
 }
 
-setSquare(1)
+setSquare(16)
 
