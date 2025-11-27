@@ -22,10 +22,11 @@ body {
 #container {
     display: flex;
     flex-wrap: wrap;
-    width: 80%;
-    height: 80%;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 960px;
+    max-height: 960px;
+    aspect-ratio: 1 / 1;
 }
 
 .square {
