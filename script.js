@@ -36,12 +36,36 @@ function setSquareSize(size) {
 }
 
 function clearGrid() {
-    size = prompt('How many squares per side?');
+    let size = prompt("How many squares per side? (1–100)");
+
+    if (size === null) return;
+
+    size = size.trim();
+    if (size === "") {
+        alert("You must enter a number.");
+        return;
+    }
+
+    const newSize = Number(size);
+
+    if (isNaN(newSize)) {
+        alert("That is not a number.");
+        return;
+    }
+
+    if (newSize < 1 || newSize > 100) {
+        alert("Number must be between 1 and 100.");
+        return;
+    }
+
+    size = newSize;
+
     container.innerHTML = "";
     setContainerSize();
     createGrid(size);
     setSquareSize(size);
 }
+
 setContainerSize();
 window.addEventListener("resize", () => {
     setContainerSize();
