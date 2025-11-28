@@ -24,8 +24,7 @@ body {
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
-    max-width: 960px;
-    max-height: 960px;
+    width: min(960px, 90vmin);
     aspect-ratio: 1 / 1;
 }
 
