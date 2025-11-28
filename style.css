@@ -29,6 +29,8 @@ body {
 .square {
     aspect-ratio: 1 / 1;
     background-color: white;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
 #newBtn {
