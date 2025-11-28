@@ -1,17 +1,17 @@
+let size = 16;
 const container = document.querySelector("#container");
 const newBtn = document.querySelector("#newBtn");
-newBtn.addEventListener('click', () => {
-    let newSquare = prompt('How many squares per side?');
-    
-    while (container.firstChild) {
-        container.removeChild(container.firstChild)
-    }
+newBtn.addEventListener('click', clearGrid);
 
-    setSquare(newSquare);
-    
-})
-function setSquare(number) {
-    for (let index = 0; index < Math.pow(number, 2); index++) {
+function setContainerSize() {
+    let shortestSide = Math.min(window.innerHeight, window.innerWidth)
+    let gridSize = shortestSide * 0.9;
+    container.style.width = gridSize + "px";
+    container.style.height = gridSize + "px";
+}
+
+function createGrid(size) {
+    for (let i = 0; i < Math.pow(size, 2); i++) {
         const square = document.createElement("div");
         square.setAttribute("class", "square");
         square.addEventListener('mouseenter', () => {
@@ -19,9 +19,34 @@ function setSquare(number) {
         })
 
         container.appendChild(square);
-
     }
 }
 
-setSquare(16)
+function setSquareSize(size) {
+    const squares = document.querySelectorAll(".square");
+    const squareWidthPercent = 100 / size;
+
+    for (const square of squares) {
+        square.style.flexBasis = squareWidthPercent + "%";
+        square.style.height = "auto";
+        square.style.flexGrow = "0";
+        square.style.flexShrink = "0";
+    }
+
+}
+
+function clearGrid() {
+    size = prompt('How many squares per side?');
+    container.innerHTML = "";
+    setContainerSize();
+    createGrid(size);
+    setSquareSize(size);
+}
+setContainerSize();
+window.addEventListener("resize", () => {
+    setContainerSize();
+    setSquareSize(size)
+});
+createGrid(size)
+setSquareSize(size)
 
